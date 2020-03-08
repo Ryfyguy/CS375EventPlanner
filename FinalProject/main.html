@@ -2,10 +2,11 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <title>User Registration</title>
+      <title>Event Finder</title>
       <link href="mainstyles.css" rel="stylesheet">
       <script src="main.js" defer></script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UAX2Ahwbli7p0LyrCdQAlBdflpVjMgA&callback=initMap"></script>   
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UAX2Ahwbli7p0LyrCdQAlBdflpVjMgA"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    </head>
 
    <body>
@@ -35,12 +36,11 @@
    		</div>
 
       <div>
-        <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
+        <button onclick="getLocation()">Get Your Location</button>
         <div id="map"></div>
 
       </div>
-    
+
    </body>
    <!-- google_key = AIzaSyBbyOPlAJm3tN9Z4w8MiD8COCd1bNiCI6s -->
 </html>

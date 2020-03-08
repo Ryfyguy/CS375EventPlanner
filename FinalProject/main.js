@@ -1,5 +1,8 @@
+var lat_value;
+var long_value;
+
 function checkForm() {
-   // TODO: Perform input validation 
+   // TODO: Perform input validation
    var fullName = document.getElementById('fullName').value;
    var email = document.getElementById('email').value;
    var password = document.getElementById('password').value;
@@ -75,12 +78,31 @@ document.getElementById("submit").addEventListener("click", function(event) {
    event.preventDefault();
 });
 
-function initMap() {
-   // The location of Uluru
-   var uluru = {lat: -25.344, lng: 131.036};
-   // The map, centered at Uluru
+window.onload = function enableLocation() {
+  navigator.geolocation.getCurrentPosition(showPosition, error);
+}
+
+function getLocation() {
+  initMap(lat_value, long_value);
+}
+
+function showPosition(position) {
+  lat_value = position.coords.latitude;
+  long_value = position.coords.longitude;
+}
+
+function error() {
+	cur_location.innerHTML = "Geolocation is not supported by this browser.";
+}
+
+function initMap(lat, long) {
+   console.log(lat);
+   console.log(long);
+   //var uluru = {lat: -25.344, lng: 131.036};
+   var cur_position = {lat: parseInt(lat), lng: parseInt(long)};
+   // The map, centered at cur_position
    var map = new google.maps.Map(
-      document.getElementById("map"), {zoom: 4, center: uluru});
+      document.getElementById("map"), {zoom: 10, center: cur_position});
   // The marker, positioned at Uluru
-   var marker = new google.maps.Marker({position: uluru, map: map});
+   var marker = new google.maps.Marker({position: cur_position, map: map});
 }
