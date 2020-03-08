@@ -99,7 +99,7 @@ function initMap(lat, long) {
    console.log(lat);
    console.log(long);
    //var uluru = {lat: -25.344, lng: 131.036};
-   var cur_position = {lat: parseInt(lat), lng: parseInt(long)};
+   var cur_position = {lat: parseFloat(lat), lng: parseFloat(long)};//{lat: parseInt(lat), lng: parseInt(long)};
    // The map, centered at cur_position
    var map = new google.maps.Map(
       document.getElementById("map"), {zoom: 10, center: cur_position});
