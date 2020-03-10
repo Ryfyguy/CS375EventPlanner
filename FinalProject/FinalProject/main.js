@@ -111,7 +111,7 @@ function locationLatLong(lat, long) {
    console.log(lat);
    console.log(long);
    //var uluru = {lat: -25.344, lng: 131.036};
-   var cur_position = {lat: parseFloat(lat), lng: parseFloat(long)};//{lat: parseInt(lat), lng: parseInt(long)};
+   var cur_position = {lat: parseFloat(lat), lng: parseFloat(long)};
    // The map, centered at cur_position
    map = new google.maps.Map(
       document.getElementById("map"), {
@@ -143,5 +143,4 @@ function getAddress() {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   })
-  console.log(address);
 }
