@@ -1,5 +1,7 @@
 var lat_value;
 var long_value;
+var map;
+var geocoder;
 
 function checkForm() {
    // TODO: Perform input validation
@@ -83,7 +85,7 @@ window.onload = function enableLocation() {
 }
 
 function getLocation() {
-  initMap(lat_value, long_value);
+  locationLatLong(lat_value, long_value);
 }
 
 function showPosition(position) {
@@ -95,14 +97,50 @@ function error() {
 	cur_location.innerHTML = "Geolocation is not supported by this browser.";
 }
 
-function initMap(lat, long) {
+function initMap() {
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+      zoom: 8,
+      center: latlng
+    }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  }
+
+function locationLatLong(lat, long) {
    console.log(lat);
    console.log(long);
    //var uluru = {lat: -25.344, lng: 131.036};
-   var cur_position = {lat: parseFloat(lat), lng: parseFloat(long)};//{lat: parseInt(lat), lng: parseInt(long)};
+   var cur_position = {lat: parseFloat(lat), lng: parseFloat(long)};
    // The map, centered at cur_position
-   var map = new google.maps.Map(
-      document.getElementById("map"), {zoom: 10, center: cur_position});
+   map = new google.maps.Map(
+      document.getElementById("map"), {
+        zoom: 10,
+        center: cur_position
+      });
   // The marker, positioned at Uluru
-   var marker = new google.maps.Marker({position: cur_position, map: map});
+   var marker = new google.maps.Marker({
+     position: cur_position,
+     map: map
+   });
+}
+
+function getAddress() {
+  var street = document.getElementById("street").value;
+  var city = document.getElementById("city").value;
+  var state = document.getElementById("state").value;
+  var address = street + ", "+ city + ", " + state;
+  geocoder.geocode( {'address': address}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+    }
+
+    else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  })
 }
