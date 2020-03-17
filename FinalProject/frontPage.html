@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Front Page</title>
+      <link href="mainstyles.css" rel="stylesheet">
+      <script src="frontPage.js" defer></script>
+   </head>  
+   <body>
+	   	<div class="flexContainer">
+			<div class="registerDiv">
+				<br />
+				<button id="signup" class="regbut" onclick="openReg()">Sign Up</button>
+   				<form id="userinfo">
+   					Full Name<br>
+	   				<input type="text" id="fullName" label="Full Name" value=""/><br><br>
+	   				Email<br>
+	   				<input type="email" id="email" label="Email" value=""/><br><br>
+	   				Password<br>
+	   				<input type="password" id="password" label="Password" value=""/><br><br>
+	   				Confirm Password<br>
+	   				<input type="password" id="passwordConfirm" label="Confirm Password" value=""/><br><br>
+					<input type="submit" class='regbut' id="submit2" value="Register">
+		   			</br>
+					<button type="button" class="regbut" id="cancel" onclick="closeReg()">Cancel</button>
+   				</form>
+
+   				<div id="formErrors" style="display: none;">
+   					<ul id="errors">
+   						<li id ="nameError">Missing full name.</li>
+   						<li id ="emailError">Invalid or missing email address.</li>
+   						<li id ="lengthError">Password must be between 10 and 20 characters.</li>
+   						<li id ="lowerError">Password must contain at least one lowercase character.</li>
+   						<li id ="upperError">Password must contain at least one uppercase character.</li>
+   						<li id ="digitError">Password must contain at least one digit.</li>
+   						<li id ="matchError">Password and confirmation password don't match.</li>
+   					</ul>
+				</div>
+				<br></br>
+			</div>
+
+			<div class="signinDiv">
+				<br />
+				<button id="signin" class="regbut" onclick="openLog()">Sign In</button>
+   				<form id="Loginfo">
+	   				Email<br>
+	   				<input type="email" id="emailLog" label="Email" value=""/><br><br>
+	   				Password<br>
+	   				<input type="password" id="passwordLog" label="Password" value=""/><br><br>
+					<input type="submit" class='regbut' id="submitLog" value="Log In"">
+		   			</br>
+					<button type="button" class="regbut" id="cancelLog" onclick="closeLog()">Cancel</button>
+				</form>
+				<br></br>
+			</div>
+		</div></br></br>
+   </body>
+</html>
