@@ -7,10 +7,11 @@
       <script src="frontPage.js" defer></script>
    </head>  
    <body>
+       <h1>Welcome to Event Finder</h1>
 	   	<div class="flexContainer">
 			<div class="registerDiv">
 				<br />
-				<button id="signup" class="regbut" onclick="openReg()">Sign Up</button>
+				<button id="signup" class="hovbut" onclick="openReg()">Sign Up</button>
    				<form id="userinfo">
    					Full Name<br>
 	   				<input type="text" id="fullName" label="Full Name" value=""/><br><br>
@@ -20,9 +21,9 @@
 	   				<input type="password" id="password" label="Password" value=""/><br><br>
 	   				Confirm Password<br>
 	   				<input type="password" id="passwordConfirm" label="Confirm Password" value=""/><br><br>
-					<input type="submit" class='regbut' id="submit2" value="Register">
+					<input type="submit" class='hovbut' id="submit2" value="Register">
 		   			</br>
-					<button type="button" class="regbut" id="cancel" onclick="closeReg()">Cancel</button>
+					<button type="button" class="hovbut" id="cancel" onclick="closeReg()">Cancel</button>
    				</form>
 
    				<div id="formErrors" style="display: none;">
@@ -41,15 +42,15 @@
 
 			<div class="signinDiv">
 				<br />
-				<button id="signin" class="regbut" onclick="openLog()">Sign In</button>
+				<button id="signin" class="hovbut" onclick="openLog()">Sign In</button>
    				<form id="Loginfo">
 	   				Email<br>
 	   				<input type="email" id="emailLog" label="Email" value=""/><br><br>
 	   				Password<br>
 	   				<input type="password" id="passwordLog" label="Password" value=""/><br><br>
-					<input type="submit" class='regbut' id="submitLog" value="Log In"">
+					<input type="submit" class='hovbut' id="submitLog" value="Log In"">
 		   			</br>
-					<button type="button" class="regbut" id="cancelLog" onclick="closeLog()">Cancel</button>
+					<button type="button" class="hovbut" id="cancelLog" onclick="closeLog()">Cancel</button>
 				</form>
 				<br></br>
 			</div>

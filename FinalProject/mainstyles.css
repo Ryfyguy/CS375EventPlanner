@@ -1,20 +1,30 @@
 /*mainstyles.css file for CS375 Final Project*/
+h1 {
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 48pt;
+    font-family: 'Raleway',sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+}
 body{
     background-image: url('https://www.collegeatlas.org/wp-content/uploads/2014/06/Top-Party-Schools-main-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
+    text-align: center;
+    width: 80%;
+    left: 10%;
+    height: 500px;
+    display: none;
+    background-color: transparent;
 }
 .flexContainer {
     display: flex;
     text-align: center;
 }
-.flexContainer > div {
-    background-color: #f1f1f1;
+.signinDiv , .registerDiv, .addressDiv, .locoDiv {
+    background-color: transparent;
     width: 50%;
     margin: 10px;
     display: inline-block;
@@ -23,13 +33,14 @@ body{
 input {
     width: 100%;
 }
-.regbut {
+.hovbut {
     opacity: 0.9;
 }
-.regbut:hover {
+.hovbut:hover {
     opacity: 1.0;
+    cursor: pointer;
 }
-#userinfo , #Loginfo{
+#userinfo , #Loginfo, #Addressinfo{
     text-align: center;
     display: none;
     width: 40%;
@@ -37,19 +48,21 @@ input {
     box-sizing: border-box;
     padding: 10px 20px;
 }
-#signup , #signin{
-    width: 70%;
-    margin: center;
-    margin: 0px 15px;
+#signup , #signin , #address, #getLoco {
+    font-size: 14pt;
+    width: 60%;
+    text-align: center;
     padding: 10px 20px;
+    border: 5px solid grey;
+    border-radius: 30px;
 }
-#submit2 , #submitLog{
+#submit2 , #submitLog, #submitAdd{
     width: 100%;
     background-color: lightgreen;
     padding: 3px 5px;
     opacity: 0.75;
 }
-#submit2:hover , #submitLog:hover{
+#submit2:hover , #submitLog:hover, #submitAdd:hover{
     opacity: 1.0;
 }
 #cancel , #cancelLog{
@@ -60,4 +73,7 @@ input {
 }
 #cancel:hover , #cancelLog:hover {
     opacity: 1.0;
+}
+#errors {
+    text-align: left;
 }

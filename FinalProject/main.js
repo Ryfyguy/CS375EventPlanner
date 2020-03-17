@@ -117,6 +117,9 @@ window.onload = function enableLocation() {
 }
 
 function getLocation() {
+  document.getElementById("Addressinfo").style.display = "none";
+  addressBGC[0].style.backgroundColor = "transparent";
+  document.getElementById("map").style.display = "inline-block";
   locationLatLong(lat_value, long_value);
 }
 
@@ -158,6 +161,7 @@ function locationLatLong(lat, long) {
 }
 
 function getAddress() {
+  document.getElementById("map").style.display = "inline-block";
   var street = document.getElementById("street").value;
   var city = document.getElementById("city").value;
   var state = document.getElementById("state").value;
@@ -175,4 +179,13 @@ function getAddress() {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   })
+}
+var addressBGC = document.getElementsByClassName("addressDiv");
+function openAdd() {
+    document.getElementById("Addressinfo").style.display = "inline-block";
+    addressBGC[0].style.backgroundColor = "#f1f1f1";
+}
+function closeAdd() {
+    document.getElementById("Addressinfo").style.display = "none";
+    addressBGC[0].style.backgroundColor = "transparent";
 }

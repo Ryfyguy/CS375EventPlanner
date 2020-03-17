@@ -98,19 +98,26 @@ document.getElementById("cancel").addEventListener("click", function(event) {
   event.preventDefault();
 });
 
+var signinBGC = document.getElementsByClassName("signinDiv");
+var registerBGC = document.getElementsByClassName("registerDiv");
 function openReg() {
    document.getElementById("userinfo").style.display = "inline-block";
    document.getElementById("Loginfo").style.display = "none";
-   document.getElementsByClassName("signinDiv").style.backgroundColor
+   registerBGC[0].style.backgroundColor = "#f1f1f1";
+   signinBGC[0].style.backgroundColor = "transparent";
  }
  function closeReg() {
    document.getElementById("userinfo").style.display = "none";
+   registerBGC[0].style.backgroundColor = "transparent";
  }
 
  function openLog() {
   document.getElementById("Loginfo").style.display = "inline-block";
   document.getElementById("userinfo").style.display = "none";
+  registerBGC[0].style.backgroundColor = "transparent";
+  signinBGC[0].style.backgroundColor = "#f1f1f1";
 }
 function closeLog() {
   document.getElementById("Loginfo").style.display = "none";
+  signinBGC[0].style.backgroundColor = "transparent";
 }
